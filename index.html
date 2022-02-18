@@ -1,16 +1,72 @@
 <html>
-    <head>
+  <head>
     <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>Simple Interest Calculator</h1>
-
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
-
-        <button onclick="compute()">Compute</button>
-    </body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+    <div class="card">
+      <h1>Simple Interest Calculator</h1>
+      <div class="input">
+        <div class="row">
+          <div class="col">Amount</div>
+          <div class="col"><input type="number" id="principal" value="0" /></div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col">Interest Rate</div>
+          <div class="col">
+            <div class="slidecontainer">
+              <input
+                onchange="showVal(this.value)"
+                class="slider"
+                id="slide"
+                type="range"
+                min="0"
+                max="100"
+                step=".01"
+                value="0"
+              />
+              <span id="sliderAmount" class="percent">0%</span>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col">No. of Years</div>
+          <div class="col">
+            <select id="years" name="years">
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+            </select>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col">
+            <button class="submit-button" onclick="compute()">Compute</button>
+          </div>
+          <div class="col"></div>
+        </div>
+        <div class="row">
+          <div class="col">If you deposit <span id="volume"></span></div>
+        </div>
+        <div class="row">
+          <div class="col">at an interest rate of <span id="rate"></span></div>
+        </div>
+        <div class="row">
+          <div class="col">
+            You will receive an amount of <span id="result"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">In the year <span id="year"></span></div>
+        </div>
+      </div>
+      <div class="footer">© Everyone Can Get Rich</div>
+    </div>
+    
+  </body>
 </html>
